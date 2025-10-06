@@ -380,7 +380,7 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
       children: [
         const SizedBox(height: 10),
         const Text(
-          "Symptoms",
+          "Status",
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 16,
@@ -409,9 +409,9 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
                         Expanded(
                           child: Text(
                             selectedSymptomIds.isEmpty
-                                ? "Select Symptoms"
+                                ? "Select Status"
                                 : "${selectedSymptomIds
-                                .length} Symptoms selected",
+                                .length} Status selected",
 
                           ),
                         ),
@@ -483,7 +483,7 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Select Symptoms",
+                  "Select Status",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -498,11 +498,11 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
                       builder: (context) {
                         final TextEditingController newSymptomController = TextEditingController();
                         return AlertDialog(
-                          title: Text('Add Symptom'),
+                          title: Text('Add Status'),
                           content: TextField(
                             controller: newSymptomController,
                             decoration: InputDecoration(
-                              hintText: 'Enter symptom name',
+                              hintText: 'Enter Status name',
                             ),
                           ),
                           actions: [
@@ -544,7 +544,7 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
             SizedBox(height: 16),
             CustomTextField(
                 label: "",
-              hintText: "Search Symptoms",
+              hintText: "Search Status",
               controller: searchController,
               onChanged: (value) {
                 if (value.isEmpty) {
@@ -572,20 +572,18 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
                       // Wrap the ListTile with Obx for reactive updates
                       return Obx(() {
                         final isSelected = tempSelectedIds.contains(symptom.id);
-                        return CheckboxListTile(
+                        return RadioListTile<int>(
                           title: Text(symptom.name),
-                          value: isSelected,
+                          value: symptom.id,
+                          groupValue: tempSelectedIds.isEmpty ? null : tempSelectedIds.first,
                           activeColor: context.colors.primary,
                           dense: true,
-                          onChanged: (bool? selected) {
-                            if (selected == true) {
-                              if (!tempSelectedIds.contains(symptom.id)) {
-                                tempSelectedIds.add(symptom.id);
-                              }
-                            } else {
-                              tempSelectedIds.remove(symptom.id);
+                          controlAffinity: ListTileControlAffinity.trailing, // ✅ puts radio button on right
+                          onChanged: (int? selectedId) {
+                            tempSelectedIds.clear(); // only one allowed
+                            if (selectedId != null) {
+                              tempSelectedIds.add(selectedId);
                             }
-                            // Force UI update
                             tempSelectedIds.refresh();
                           },
                         );
@@ -599,17 +597,15 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: Obx(() => ElevatedButton(
+                  child:  ElevatedButton(
                     onPressed: () {
                       updateSelectedSymptoms(tempSelectedIds);
                       Get.back();
                     },
 
-                    child: Text(
-                      "Done (${tempSelectedIds.length})",
-                      style: AppTextStyles.button
-                    ),
-                  )),
+                    child: Text("Done", style: AppTextStyles.button),
+
+                  ),
                 ),
               ],
             ),

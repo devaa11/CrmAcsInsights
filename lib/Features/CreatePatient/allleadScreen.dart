@@ -293,7 +293,7 @@ void _showFilterBottomSheet() {
     );
   }
 
-  @override  @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -315,7 +315,7 @@ void _showFilterBottomSheet() {
                 Expanded(
                   child: CustomTextField(
                     controller: controller.searchController,
-                    hintText: 'Search patients...',
+                    hintText: 'Search leads...',
                     label: "",
                     prefixIcon: Icon(Icons.search),
                     onChanged: (val) {

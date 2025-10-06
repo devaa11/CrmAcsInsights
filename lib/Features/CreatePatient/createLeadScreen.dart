@@ -60,7 +60,7 @@ class _CreatePatientScreenState extends State<CreatePatientScreen> {
                 CustomTextField(
                   label: "Name",
                   controller: nameController,
-                  hintText: "Enter Patient Name",
+                  hintText: "Enter Lead Name",
                   validator: Validators.validateName,
                 ),
                 Obx(() => createPatientcontroller.nameError.value.isNotEmpty
@@ -76,7 +76,7 @@ class _CreatePatientScreenState extends State<CreatePatientScreen> {
                 CustomTextField(
                   label: "Phone No",
                   controller: phoneController,
-                  hintText: "Enter Patient Phone No",
+                  hintText: "Enter lead Phone No",
                   keyboardType: TextInputType.phone,
                   suffixIcon: Theme.of(context).platform == TargetPlatform.android
                       ? IconButton(
@@ -99,7 +99,7 @@ class _CreatePatientScreenState extends State<CreatePatientScreen> {
                 CustomTextField(
                   label: "Age",
                   controller: ageController,
-                  hintText: "Enter Patient Age",
+                  hintText: "Enter lead Age",
                   keyboardType: TextInputType.number,
                   validator: (val) {
                     if (val == null || val.isEmpty) return 'Age is required';
@@ -119,7 +119,7 @@ class _CreatePatientScreenState extends State<CreatePatientScreen> {
                 CustomTextField(
                   label: "Address",
                   controller: locationController,
-                  hintText: "Enter Patient Address",
+                  hintText: "Enter lead Address",
                   isMultiline: true,
                   validator: (val) => val == null || val.isEmpty ? 'Address is required' : null,
                 ),
