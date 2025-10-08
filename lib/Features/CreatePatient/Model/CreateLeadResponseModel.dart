@@ -25,6 +25,7 @@ class Patient {
   final String? phoneNumber;
   final String? location;
   final int? age;
+  final String? company_name;
   final Source? source;
   final List<Symptom>? symptoms;
   final Status? status;
@@ -36,6 +37,7 @@ class Patient {
     this.name,
     this.phoneNumber,
     this.location,
+    this.company_name,
     this.age,
     this.source,
     this.symptoms,
@@ -51,6 +53,7 @@ class Patient {
       phoneNumber: json['phone_number'],
       location: json['location'],
       age: json['age'],
+      company_name: json['company_name'],
       source: json['source'] != null ? Source.fromJson(json['source']) : null,
       symptoms: (json['symptoms'] as List<dynamic>?)
           ?.map((e) => Symptom.fromJson(e))

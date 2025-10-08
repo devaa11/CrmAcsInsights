@@ -39,7 +39,6 @@ class CreatePatientcontroller extends GetxController {
   bool validateFields({
     required String name,
     required String phone,
-    required String age,
     required String address,
   }) {
     // Clear previous errors
@@ -48,7 +47,6 @@ class CreatePatientcontroller extends GetxController {
     // Validate each field
     nameError.value = Validators.validateName(name) ?? '';
     phoneError.value = Validators.validatePhone(phone) ?? '';
-    ageError.value = Validators.validateAge(age) ?? '';
     addressError.value = Validators.validateAddress(address) ?? '';
 
     // Source validation
@@ -58,7 +56,7 @@ class CreatePatientcontroller extends GetxController {
 
     // Symptoms validation
     if (selectedSymptomIds.isEmpty) {
-      symptomsError.value = 'Please select at least one symptom';
+      symptomsError.value = 'Please select at least one Service';
     }
 
     // Return true if there are no errors

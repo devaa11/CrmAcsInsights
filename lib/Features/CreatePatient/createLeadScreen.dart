@@ -97,25 +97,20 @@ class _CreatePatientScreenState extends State<CreatePatientScreen> {
                 )
                     : SizedBox.shrink()),
                 CustomTextField(
-                  label: "Age",
+                  label: "Company name",
                   controller: ageController,
-                  hintText: "Enter lead Age",
+                  hintText: "Enter Company name",
                   keyboardType: TextInputType.number,
-                  validator: (val) {
-                    if (val == null || val.isEmpty) return 'Age is required';
-                    if (int.tryParse(val) == null) return 'Enter a valid age';
-                    return null;
-                  },
                 ),
-                Obx(() => createPatientcontroller.ageError.value.isNotEmpty
-                    ? Padding(
-                  padding: const EdgeInsets.only(left: 8.0, top: 4.0),
-                  child: Text(
-                    createPatientcontroller.ageError.value,
-                    style: TextStyle(color: Colors.red, fontSize: 12),
-                  ),
-                )
-                    : SizedBox.shrink()),
+                // Obx(() => createPatientcontroller.ageError.value.isNotEmpty
+                //     ? Padding(
+                //   padding: const EdgeInsets.only(left: 8.0, top: 4.0),
+                //   child: Text(
+                //     createPatientcontroller.ageError.value,
+                //     style: TextStyle(color: Colors.red, fontSize: 12),
+                //   ),
+                // )
+                //     : SizedBox.shrink()),
                 CustomTextField(
                   label: "Address",
                   controller: locationController,
@@ -192,7 +187,6 @@ class _CreatePatientScreenState extends State<CreatePatientScreen> {
                     final bool isValid = createPatientcontroller.validateFields(
                       name: nameController.text.trim(),
                       phone: phoneController.text.trim(),
-                      age: ageController.text.trim(),
                       address: locationController.text.trim(),
                     );
 

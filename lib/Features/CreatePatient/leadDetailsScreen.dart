@@ -207,7 +207,7 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                             _buildInfoRow(Icons.medical_services, 'Procedure',
                                 patient.procedure ?? "Not provided"),
                             _buildSymptomsInfoRow(Icons.local_hospital,
-                                "Status", patient.symptoms),
+                                "Service", patient.symptoms),
                           ],
                         ),
                         SizedBox(height: 10.h),

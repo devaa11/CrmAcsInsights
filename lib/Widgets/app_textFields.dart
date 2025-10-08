@@ -380,7 +380,7 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
       children: [
         const SizedBox(height: 10),
         const Text(
-          "Status",
+          "Service",
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 16,
@@ -404,14 +404,14 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
                         horizontal: 12, vertical: 12),
                     child: Row(
                       children: [
-                        Icon(Icons.medical_information, color: context.icons.color),
+                        Icon(Icons.miscellaneous_services_outlined, color: context.icons.color),
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
                             selectedSymptomIds.isEmpty
-                                ? "Select Status"
+                                ? "Select Service"
                                 : "${selectedSymptomIds
-                                .length} Status selected",
+                                .length} Service selected",
 
                           ),
                         ),
@@ -483,7 +483,7 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Select Status",
+                  "Select Service",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -498,11 +498,11 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
                       builder: (context) {
                         final TextEditingController newSymptomController = TextEditingController();
                         return AlertDialog(
-                          title: Text('Add Status'),
+                          title: Text('Add Service'),
                           content: TextField(
                             controller: newSymptomController,
                             decoration: InputDecoration(
-                              hintText: 'Enter Status name',
+                              hintText: 'Enter Service name',
                             ),
                           ),
                           actions: [
@@ -544,7 +544,7 @@ class SymptomsMultiSelectDropdown extends StatelessWidget {
             SizedBox(height: 16),
             CustomTextField(
                 label: "",
-              hintText: "Search Status",
+              hintText: "Search Service",
               controller: searchController,
               onChanged: (value) {
                 if (value.isEmpty) {
