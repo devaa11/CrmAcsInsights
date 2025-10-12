@@ -78,7 +78,7 @@ class Settingscreen extends StatelessWidget {
                 title: 'Terms and Conditions',
                 onTap: () {
                   Get.to(WebViewPage(), arguments: {
-                    'url': 'https://www.drdictins.com/about',
+                    'url': 'https://crm.acsinsights.com/about',
                     'title': 'Terms and Conditions',
                   });
                 },
@@ -89,7 +89,7 @@ class Settingscreen extends StatelessWidget {
                 title: 'Privacy Policy',
                 onTap: () {
                   Get.to(WebViewPage(), arguments: {
-                    'url': 'https://www.drdictins.com/privacy',
+                    'url': 'https://crm.acsinsights.com/privacy',
                     'title': 'Privacy Policy',
                   });
                 },
@@ -100,7 +100,7 @@ class Settingscreen extends StatelessWidget {
                 title: 'About Us',
                 onTap: () {
                   Get.to(WebViewPage(), arguments: {
-                    'url': 'https://www.drdictins.com/about',
+                    'url': 'https://crm.acsinsights.com/about',
                     'title': 'About Us',
                   });
                 },
@@ -111,7 +111,7 @@ class Settingscreen extends StatelessWidget {
                 title: 'Contact Us',
                 onTap: () {
                   Get.to(WebViewPage(), arguments: {
-                    'url': 'https://www.drdictins.com/contact-3',
+                    'url': 'https://crm.acsinsights.com/contact-3',
                     'title': 'Contact Us',
                   });
                 },

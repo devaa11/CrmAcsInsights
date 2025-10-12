@@ -100,7 +100,6 @@ class _CreatePatientScreenState extends State<CreatePatientScreen> {
                   label: "Company name",
                   controller: ageController,
                   hintText: "Enter Company name",
-                  keyboardType: TextInputType.number,
                 ),
                 // Obx(() => createPatientcontroller.ageError.value.isNotEmpty
                 //     ? Padding(

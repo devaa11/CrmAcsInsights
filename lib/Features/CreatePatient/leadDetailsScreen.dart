@@ -187,12 +187,6 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                             ),
                             _buildInfoRow(Icons.location_on, 'Location',
                                 patient.location ?? "Not provided"),
-                            _buildInfoRow(
-                                Icons.calendar_today,
-                                'Age',
-                                patient.age != null
-                                    ? '${patient.age} years'
-                                    : "Not provided"),
                           ],
                         ),
                         SizedBox(height: 10.h),
@@ -204,8 +198,6 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
                                 patient.source?.name ?? "Not provided"),
                             _buildInfoRow(
                                 Icons.access_time, 'Created', createdAt),
-                            _buildInfoRow(Icons.medical_services, 'Procedure',
-                                patient.procedure ?? "Not provided"),
                             _buildSymptomsInfoRow(Icons.local_hospital,
                                 "Service", patient.symptoms),
                           ],
